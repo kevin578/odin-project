@@ -1,22 +1,51 @@
+class UpperCaseLetter 
+    @@shiftedValue
+    def intialize(ascii, shift)   
+        @ascii = ascii
+        @shift = shift
+    end
+
+    def shift
+
+    end
+
+
+end
+
+
+
 def cipher(message = "Please input a message", number = 0) 
 
-    def 
 
-    for i in 0...message.length
 
-        @shiftedNumber = message[i].ord + number
+    message.each_char { |c|
+        @shiftedNumber = c.ord + number
+        @newChar
 
-        #@shiftedNumber
 
-        case message[i].ord + number
+        #caps 65 - 90
+
+        #lowercase 97 - 122
+
 
         #check for value exceeding 90 go back to 65
-        when @shiftedNumber > 90
-            puts "lower too high"
-
-
 
         #check for value exceeding 122 go back to 97
+
+        # if greater than 
+
+
+
+    }
+
+
+
+        # when @shiftedNumber > 90
+        #     puts "lower too high"
+
+
+
+
 
         # if is in range go back add to value 
 
@@ -26,8 +55,8 @@ def cipher(message = "Please input a message", number = 0)
         
 
 
-        puts @shiftedNumber.chr
-    end
+        # puts @shiftedNumber.chr
+
 
 end
 

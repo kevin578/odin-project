@@ -1,14 +1,37 @@
-class UpperCaseLetter 
-    @@shiftedValue
-    def intialize(ascii, shift)   
+class LowerCaseLetter 
+    
+    def initialize(ascii, shift)   
         @ascii = ascii
         @shift = shift
     end
 
     def shift
-
+        @asciiValue
+        if @ascii + @shift > 122
+            return ((@ascii + @shift) - 122 + 97).chr
+        else 
+            return (@ascii + @shift).chr
+        end
     end
 
+end
+
+
+class UpperCaseLetter 
+    
+    def initialize(ascii, shift)   
+        @ascii = ascii
+        @shift = shift
+    end
+
+    def shift
+        @asciiValue
+        if @ascii + @shift > 90
+            return ((@ascii + @shift) - 90 + 65).chr
+        else 
+            return (@ascii + @shift).chr
+        end
+    end
 
 end
 
@@ -16,28 +39,27 @@ end
 
 def cipher(message = "Please input a message", number = 0) 
 
-
+    @finalString = ""
 
     message.each_char { |c|
         @shiftedNumber = c.ord + number
         @newChar
+   
+        #letter = LowerCaseLetter.new(c.ord, number);
 
 
-        #caps 65 - 90
-
-        #lowercase 97 - 122
-
-
-        #check for value exceeding 90 go back to 65
-
-        #check for value exceeding 122 go back to 97
-
-        # if greater than 
-
+        if c.ord >= 97 && c.ord <= 122
+            @finalString << LowerCaseLetter.new(c.ord, number).shift
+        elsif c.ord >= 65 && c.ord <= 90
+            @finalString << UpperCaseLetter.new(c.ord, number).shift
+        else 
+            @finalString << c
+        end
 
 
     }
 
+    puts @finalString
 
 
         # when @shiftedNumber > 90

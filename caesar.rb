@@ -2,11 +2,12 @@ class Letter
     def initialize(ascii, shift)   
         @ascii = ascii
         @shift = shift
-    end  
+    end
+  
 end
 
 
-class LowerCaseLetter  < Letter
+class LowerCaseLetter < Letter
 
     def shift
         @asciiValue

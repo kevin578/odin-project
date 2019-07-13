@@ -1,9 +1,12 @@
-class LowerCaseLetter 
-    
+class Letter
     def initialize(ascii, shift)   
         @ascii = ascii
         @shift = shift
-    end
+    end  
+end
+
+
+class LowerCaseLetter  < Letter
 
     def shift
         @asciiValue
@@ -17,13 +20,8 @@ class LowerCaseLetter
 end
 
 
-class UpperCaseLetter 
+class UpperCaseLetter < Letter
     
-    def initialize(ascii, shift)   
-        @ascii = ascii
-        @shift = shift
-    end
-
     def shift
         @asciiValue
         if @ascii + @shift > 90
